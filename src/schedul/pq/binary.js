@@ -85,7 +85,7 @@ schedul.pq.Binary.prototype.bubbleUp_ = function(i) {
  * @override
  */
 schedul.pq.Binary.prototype.pop = function() {
-  goog.asserts.assert(this.array_.length > 0,
+  goog.asserts.assert(!goog.array.isEmpty(this.array_.length),
       'pop() called on empty binary heap');
 
   var smallestValue = this.array_[0];
@@ -106,7 +106,7 @@ schedul.pq.Binary.prototype.pop = function() {
  * @override
  */
 schedul.pq.Binary.prototype.peek = function() {
-  if (goog.array.isEmpty(this.array_.length)) {
+  if (goog.array.isEmpty(this.array_)) {
     return null;
   }
   return this.array_[0];
